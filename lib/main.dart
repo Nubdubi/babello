@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:worldtalk/page/memo_page.dart';
 import 'package:worldtalk/page/quick_memo_page.dart';
@@ -9,6 +10,7 @@ import 'chat_page.dart'; // 기존 DualChatPage import
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await GetStorage.init();
+  await dotenv.load(fileName: ".env");
   runApp(const MyApp());
 }
 
