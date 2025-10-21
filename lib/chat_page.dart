@@ -581,10 +581,13 @@ class _DualChatPageState extends State<DualChatPage> {
                   );
                 },
                 child: Container(
+                  alignment: Alignment.center,
                   width: MediaQuery.of(context).size.width,
                   color: Colors.amber,
                   height: 30,
-                  child: Icon(Icons.keyboard_arrow_down_outlined),
+                  child: _messages.isEmpty
+                      ? Text('no message')
+                      : Icon(Icons.keyboard_arrow_down_outlined),
                 ),
               ),
             ListTile(
